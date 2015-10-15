@@ -1,0 +1,61 @@
+.animate-show {
+	-webkit-transition: all linear 0.5s;
+	-o-transition: all linear 0.5s;
+	transition: all linear 0.5s;
+	position: relative;
+	opacity: 1;
+	left: 0;
+}
+
+.animate {
+	position: relative;
+	left: 100%;
+	opacity: 0;
+}
+
+.alert-text {
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  background: white;
+  color: red;
+}
+
+.should-fade {
+	opacity: 1;
+}
+
+.should-fade.ng-hide-add.ng-hide-add-active,
+.should-fade.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.35s;
+  transition: all linear 0.35s;
+}
+
+.should-fade.ng-hide {
+  opacity: 0;
+}
+
+.alert-text.ng-hide-add.ng-hide-add-active,
+.alert-text.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.alert-text.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.faded.ng-hide-add.ng-hide-add-active,
+.faded.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.7s;
+  transition: all linear 0.7s;
+  -webkit-transition-delay: 0.7s;
+  -o-transition-delay: 0.7s;
+  transition-delay: 0.7s;
+}
+
+.faded.ng-hide {
+	opacity: 0;
+}

@@ -1,0 +1,30 @@
+<title>Debería ?</title>
+<div ng-class="getClass(background)" class="container">
+	<section class="content">
+		<div class="row">
+			<div class="medium-6 columns v-center">
+				<h2 class="font-allofme">¿Sos un indeciso?....</h2>
+				<textarea ng-model="question" placeholder="Escribínos tu duda..." type="text" class="border-less border-radius-5-x"></textarea>
+				<span ng-show="!hasQuestion" class="alert-text">Debes hacer una pregunta !</span>
+			</div>
+			<div class="medium-6 columns text-center">
+				<img ng-show="!response" class="should-fade click-me" ng-click="getResponse(question)" src="img/logo.png" alt="">
+				<p ng-show="!response" class="should-fade">Click aquí y fin al dilema</p>
+				<img ng-show="response" src="" ng-src="{{response.img}}" count="count" class="animate-show animate hide" fade-in alt="" />
+				<div class="button-groups">
+					<img ng-click="facebookShare(question)" ng-show="response" class="faded icon" src="img/fb.png" alt="">
+					<img ng-click="getResponse(question); clicked = false" ng-show="response" class="faded icon" src="img/refresh.png" alt="">
+				</div>
+				<div class="text-center">
+					<button class="purple-button centered-button faded show-for-medium-down" ng-show="response" ng-click="clicked = true" title="Click to copy me.">Comparte tu pregunta</button>
+					<button class="purple-button centered-button faded show-for-large-only" ng-show="response" ng-click="clicked = true" id="copy-button" data-clipboard-text="{{shareUrl}}" title="Click to copy me.">Comparte tu pregunta</button>
+				</div>
+				<span class="should-fade info-span show-for-medium-down" ng-show="clicked">Copia este link y compártelo como quieras {{shareUrl}}</span>
+				<span class="should-fade info-span show-for-large-only" ng-show="clicked">Acabas de copiar un link, envíaselo a alguien para que también salgan de este dilema.</span>
+			</div>		
+		</div>
+		<!--<script>
+			switch(Math.round(Math.random()*2)){case 0:$('body').addClass("yellow-bg");break;case 1:$('body').addClass("red-bg");break;case 2:$('body').addClass("blue-bg");break;}
+		</script>-->
+	</section>
+</div>
