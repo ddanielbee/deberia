@@ -1,4 +1,8 @@
 app.controller('DeberiaController', function($scope, $routeParams, $timeout, $rootScope) {
+	
+	/*
+	First, check if browser has flash (used for copying to clipboard with a click)
+	 */
 	var hasFlash = false;
 	try {
 	  var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
@@ -51,6 +55,13 @@ app.controller('DeberiaController', function($scope, $routeParams, $timeout, $ro
 	]
 	$scope.cell = Math.round(Math.random()*($scope.responses.length-1));
 	$rootScope.background = Math.round(Math.random()*2);
+
+	/**
+	 * Returns a background for the app
+	 * @author Daniel Bolívar <daniel.bolivar@icloud.com>
+	 * @param  {int} background A number describing the kind of background to use
+	 * @return {String}            A string that's a classname to apply
+	 */
 	$rootScope.getClass = function(background) {
 		var returnValue = "";
 		if(background == 0)
@@ -80,10 +91,14 @@ app.controller('DeberiaController', function($scope, $routeParams, $timeout, $ro
 			$scope.question = $routeParams.question;
 			$scope.response = $scope.responses[$routeParams.result];
 		}
-	} else
-	{
-
 	}
+
+	/**
+	 * Facebook Share Function
+	 * @author Daniel Bolívar <daniel.bolivar@icloud.com>
+	 * @param  {String} question Input value from the app
+	 * @return {void}          
+	 */
 	$scope.facebookShare = function(question) {
 		FB.ui({
 			method: 'feed',
